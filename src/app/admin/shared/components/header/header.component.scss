@@ -1,0 +1,129 @@
+.header {
+
+  width: 95%;
+  height: 76px;
+  margin: 1rem auto 0.5rem auto;
+  background: #ffffff;
+  box-shadow: 0px 0px 12px rgba(198, 226, 255, 0.506687);
+  border-radius: 38px;
+  display: flex;
+  justify-content: space-evenly;
+
+  .title {
+    padding-left: 20px;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    color: #6a7183;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+
+    p {
+      span:last-child {
+        color: #008467;
+      }
+    }
+    .text-0{
+      font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+letter-spacing: 0.0242857px;
+font-family: Roboto;
+color: #8C8F9C;
+margin-right: 5px;
+    }
+    .slash{
+      font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+letter-spacing: 0.0242857px;
+
+color: #8C8F9C;
+margin-right: 5px;
+    }
+    .text-1{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 21px;
+      /* identical to box height, or 131% */
+
+      letter-spacing: 0.0242857px;
+      color:#4BBD60
+    }
+  }
+
+  .info {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 29px;
+    .nombre {
+      text-align: center;
+      .nameClinica {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        /* identical to box height, or 131% */
+
+        text-align: right;
+        letter-spacing: 0.0228571px;
+
+        color: #6AC47A;
+
+      }
+      p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 21px;
+        /* identical to box height, or 162% */
+        font-family: Roboto;
+        text-align: center;
+        letter-spacing: 0.0185714px;
+
+        color: #80848e;
+      }
+    }
+    .foto {
+      cursor: pointer;
+      height: 80%;
+      margin: 0 1rem;
+      border-radius: 100%;
+
+      img {
+        height: 100%;
+        border-radius: 100%;
+        margin-top: -61px;
+      }
+    }
+    .foto::before {
+      content: "";
+      background-image: url(/assets/svg/Oval.svg);
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 62px;
+      width: 60px;
+      z-index: 1;
+      display: flex;
+      max-width: 540px;
+    }
+  }
+}
+
+

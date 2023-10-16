@@ -1,0 +1,110 @@
+<div class="drawer {{ class('drawer') }}">
+    <img
+      src="/assets/svg/drawer/drawer-arrow.svg"
+      alt="arrow"
+      class="boton"
+      (click)="oyc()"
+    />
+    <div class="logo" (click)="go('init', '')">
+      <img src="/assets/svg/shared/logo-suma.svg" alt="logo" />
+    </div>
+
+    <div class="divider">
+
+    </div>
+
+    <div class="title">
+      <p class=" {{ class('drawer') == 'opened' ? '' : 'opacity' }} ">
+      Sistema de Admin <br>
+        Suma Salud
+      </p>
+  <!--
+      <span class=" {{ class('drawer') == 'opened' ? 'subtitle' : 'opacity' }} ">
+        Ver datos corporativos
+       </span> -->
+    </div>
+
+
+
+    <div class="modulos">
+
+      <mat-accordion >
+        <mat-expansion-panel
+          class="modulo {{ class('modulo') }}"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header
+            ><img
+            class="icon-activo"
+            src="/assets/svg/drawer/accountreal.svg"
+              alt=""
+              style="margin-right: 8px; height: 25px"
+            />
+            <img
+            class="icon-inactivo"
+            src="/assets/svg/drawer/accountreal-a.svg"
+              alt=""
+              style="margin-right: 8px; height: 25px"
+            />
+            <h4 class="panel-title-text "> Proveedores </h4>
+          </mat-expansion-panel-header>
+          <button
+
+          class="vista"
+          *ngFor="let item of listItem, let i = index"
+
+          (click)="changeRoute(i)"
+        >
+          <div [ngClass]="item.active ? 'txt-medi':'txt'" >
+            <img src="/assets/svg/drawer/icono-2.svg" *ngIf="item.active == true" alt="" />
+            <img src="/assets/svg/drawer/icono.svg" *ngIf="item.active == false" alt="" />
+            <p style="text-align: left;" class="item-text">
+              {{item.name}}
+            </p>
+          </div>
+        </button>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel
+          class="modulo {{ class('modulo') }}"
+
+        >
+          <mat-expansion-panel-header
+            > <img
+            class="icon-activo"
+            src="/assets/svg/drawer/atenciones-a.svg"
+              alt=""
+              style="margin-right: 8px; height: 25px"
+            />
+            <img
+            class="icon-inactivo"
+            src="/assets/svg/drawer/atenciones.svg"
+              alt=""
+              style="margin-right: 8px; height: 25px"
+            />
+            <h4  class="panel-title-text "> Atencion </h4>
+          </mat-expansion-panel-header>
+          <button
+
+            class="vista"
+
+
+          >
+            <div class="txt" >
+              <img src="/assets/svg/icono.svg" alt="" />
+              <p  class="item-text">
+                Teleconsultas
+              </p>
+            </div>
+          </button>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </div>
+    <div class="divLogout"> <img src="assets/svg/icono-back.svg" alt=""> <p class="logout">  Regresar al Holding</p> </div>
+    <!-- <app-footer class_item="{{ class('drawer') == 'opened' ? 'item' : 'item_close' }}"></app-footer> -->
+
+  </div>

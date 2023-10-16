@@ -1,0 +1,48 @@
+.main-notfound{
+  width: 95%;
+  margin: 0 auto 1%;
+  background-image: url('/assets/img/personNot.png'), url('/assets/svg/shared/not-foundIcon.svg');
+  background-position: left 90px bottom , right top -7px;
+  background-repeat: no-repeat;
+  display: flex;
+  box-shadow: 0px 0px 14px rgba(202, 229, 249, 0.5);
+  height: 320px;
+  border-radius: 22px;
+  background-color: white;
+  .div1{
+    width: 60%;
+    height: 100%;
+  }
+  .div2{
+    width: 40%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    .text{
+      font-family: 'Roboto';
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 37px;
+/* or 116% */
+
+text-align: center;
+letter-spacing: 0.24px;
+
+color: #01387B;
+      .subtext{
+        font-family: 'Roboto';
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 37px;
+/* or 116% */
+
+text-align: center;
+letter-spacing: 0.24px;
+
+color:#45AE58
+      }
+    }
+  }
+}

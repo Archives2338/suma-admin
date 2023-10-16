@@ -1,0 +1,43 @@
+
+<div class="filter">
+  <h3>Horarios de Teleconsulta</h3>
+  <div class="fechas">
+    <div class="fecha">
+      <h4>Desde</h4>
+      <mat-form-field appearance="outline" class="input" style="width: 200px;">
+        <input
+          readonly
+          matInput
+          [min]="diasAntes"
+          [matDatepicker]="picker"
+          [(ngModel)]="inicio"
+        />
+
+        <mat-datepicker-toggle matSuffix [for]="picker">
+
+          <mat-icon matDatepickerToggleIcon >
+            <img src="/assets/svg/shared/mat-date.svg">
+        </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="fecha">
+      <h4>Hasta</h4>
+      <mat-form-field appearance="outline" class="input" style="width: 200px;">
+        <input readonly matInput [matDatepicker]="picker2" [(ngModel)]="fin" />
+
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker2"
+        >
+        <mat-icon matDatepickerToggleIcon>
+          <img src="/assets/svg/shared/mat-date.svg">
+      </mat-icon>
+      </mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <button class="default" (click)="filter()">    <p class="text">Buscar</p></button>
+  </div>
+</div>

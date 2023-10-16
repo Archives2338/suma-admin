@@ -1,0 +1,5 @@
+<app-filtro  (range)="searchByRange($event)" > </app-filtro>
+<app-table-horarios [sortInfoData]="sortInfoData" *ngIf="sortInfoData.length>0"></app-table-horarios>
+<app-loader ></app-loader>
+<app-not-found-search *ngIf="sortInfoData.length<=0" ></app-not-found-search>
+```
