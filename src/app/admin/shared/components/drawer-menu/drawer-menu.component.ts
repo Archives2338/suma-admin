@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output,OnInit } from '@angular/core';
+import { Component, EventEmitter, Output,OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Modulo } from '../../interfaces/auth';
 
 @Component({
   selector: 'app-drawer-menu',
@@ -7,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./drawer-menu.component.scss']
 })
 export class DrawerMenuComponent {
-
 
 
   public panelOpenState: boolean = false;
@@ -18,31 +18,56 @@ export class DrawerMenuComponent {
   // NOMBRE PROVEEDOR
   public nameProvider: string = 'Significad';
   public listItem = [
-    { name: 'Horario de Teleconsulta', active: true },{
-      name : 'Medicos', active : false
-    }
+    { name: 'Horario de Teleconsulta', active: true },
+    { name : 'Medicos', active : false }
   ]
-  constructor(    private router: Router){}
+
+  public modulos: any = [
+    {
+        id: 1,
+        name: "Proveedores",
+        views: [
+            {
+                id: 1,
+                name: "Horario de Teleconsulta",
+                active: true
+            },
+            {
+                id: 2,
+                name: "Medicos",
+                active: false
+            }
+        ]
+    },
+    {
+        id: 8,
+        name: "Atencion",
+        views: [
+            {
+                id: 13,
+                name: "Teleconsultas",
+                active: false
+            }
+        ]
+    }
+]
+  constructor( private router: Router,
+              ){}
   ngOnInit(): void {
-
-
-
-
-
-
 
   }
 
  // desactivar todos los items del menu
- desactiveAllItemsMenu() {
+desactiveAllItemsMenu() {
   this.listItem.forEach((item) => {
     item.active = false;
   });
 }
-changeRoute(number:number){
+changeRoute(number:number): void{
 
   this.desactiveAllItemsMenu() ;
   this.listItem[number].active = true;
+
 }
 
   @Output() cl = new EventEmitter<string>();
@@ -65,9 +90,60 @@ changeRoute(number:number){
     }
     return value;
   }
-  public go(m: string, v: string): void {
+  // public go(m: string, v: string): void {
+  //   switch (m) {
+  //     case 'Proveedores':
+  //       switch(v) {
+  //         case 'Horario de Teleconsulta':
+  //           this.router.navigate(['admin/proveedores/horario-teleconsultas']);
+  //           break;
+  //         case 'Medicos':
+  //           this.router.navigate([
+  //             'admin/proveedores/medicos',
+  //           ]);
+  //           break;
+  //         default:
+  //           this.router.navigate([
+  //             'admin/proveedores',
+  //           ]);
+  //           break;
+  //       }
+  //     break;
+  //     case 'Atencion':
+  //       switch (v) {
+  //         case 'Teleconsultas':
+  //           this.router.navigate(['admin/atencion/teleconsultas']);
+  //           break;
+  //       }
+  //       break;
+  //   }
+  // }
 
+  public go(m: string, v: string): void {
+    switch (m) {
+      case 'Proveedores':
+        switch (v) {
+          case 'Horario de Teleconsulta':
+            this.router.navigate(['admin/proveedores/horario-teleconsultas']);
+            break;
+          case 'Medicos':
+            this.router.navigate(['admin/proveedores/medicos']);
+            break;
+          default:
+            this.router.navigate(['admin/proveedores']);
+            break;
+        }
+        break;
+      case 'Atencion':
+        switch (v) {
+          case 'Teleconsultas':
+            this.router.navigate(['admin/atencion/teleconsultas']);
+            break;
+        }
+        break;
+    }
   }
+
 
 
 
