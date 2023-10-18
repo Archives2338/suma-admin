@@ -20,6 +20,7 @@ export class HorariosTeleconsultasComponent {
    InfoProveedores(data:Range){
     this.services.getInfoProveedores(data).subscribe((data: any) => {
       if (data) {
+        console.log(data);
         if(data.length > 0){
           for (let index = 0; index < data.length; index++) {
             data[index].horarios = MetodoOrdenarArregloHorarioString(data[index].horarios)
