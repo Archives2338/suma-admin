@@ -132,6 +132,11 @@
           </td>
           <td>
             {{ item.estado_siniestro}}
+            <div class="div" *ngIf="item.estado_siniestro == 'Observado'">
+            <button mat-button (click)="openModal(item.estado_siniestro, item.inicio_siniestro, item.motivo)">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+          </div>
           </td>
           <td class="body-row-td double-botton">
             <a [href]="item.url_pdf" target="_blank">

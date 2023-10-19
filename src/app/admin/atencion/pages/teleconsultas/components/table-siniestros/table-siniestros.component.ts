@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import * as XLSX from 'xlsx';
+import { ModalEstadoSiniestrosComponent } from '../../../modal-estado-siniestros/modal-estado-siniestros.component';
 
 @Component({
   selector: 'app-table-siniestros',
@@ -25,6 +27,10 @@ export class TableSiniestrosComponent implements OnInit {
 
   public loading: boolean = false;
   public esconder: boolean = false;
+
+  constructor(
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.siniestros2 = this.siniestros;
@@ -96,6 +102,24 @@ export class TableSiniestrosComponent implements OnInit {
     this.loading = false;
   }
 
+  openModal(estado_siniestro: any, inicio_siniestro: any, motivo: any) {
+    const dialogRef = this.dialog.open(ModalEstadoSiniestrosComponent, {
+      // width: '402px',
+      // height: '255px',
+      width: '442px',
+      height: '350px',
+      panelClass: 'dialog-actions',
+      data: {
+        estado_siniestro: estado_siniestro,
+        inicio_siniestro: inicio_siniestro,
+        motivo: motivo
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('El modal se ha cerrado');
+    });
+  }
 
 
   filtrarSiniestros() {

@@ -25,12 +25,18 @@ export class DrawerMenuComponent {
   constructor(    private router: Router){}
   ngOnInit(): void {
 
+  }
 
+  goTeleconsultas(): void{
+    this.router.navigate(['admin/atencion/teleconsultas']);
+  }
 
+  goHorariosTeleconsultas(): void{
+    this.router.navigate(['admin/proveedores/horario-teleconsultas']);
+  }
 
-
-
-
+  goMedico(): void{
+    this.router.navigate(['admin/proveedores/medicos']);
   }
 
  // desactivar todos los items del menu
