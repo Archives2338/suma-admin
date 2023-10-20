@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import * as XLSX from 'xlsx';
 import { ModalEstadoSiniestrosComponent } from '../../../modal-estado-siniestros/modal-estado-siniestros.component';
+import { Siniestros } from 'src/app/admin/proveedores/interfaces/horarios';
 
 @Component({
   selector: 'app-table-siniestros',
@@ -11,7 +12,7 @@ import { ModalEstadoSiniestrosComponent } from '../../../modal-estado-siniestros
 export class TableSiniestrosComponent implements OnInit {
 
   // input para recibir los siniestros
-  @Input() public siniestros: any[] = [];
+  @Input() public siniestros: Array<Siniestros> = [];
   public siniestros2: any[] = []
 
   public inicio :any ;
