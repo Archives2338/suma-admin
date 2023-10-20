@@ -30,3 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 aws s3 sync dist/ s3://adminsumasalud
 aws cloudfront create-invalidation --distribution-id E3PF0FBU1HYUXW --paths "/*"
+
+
+
+## URL
+https://d1g52w55z7q2pw.cloudfront.net/auth
