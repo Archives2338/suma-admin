@@ -1,0 +1,129 @@
+
+
+@import url("/src/assets/scss/table.scss");
+.libre {
+  width: 50px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  align-items: center;
+border: 1px solid #4bbd60;
+color: #4bbd60;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.038px;
+margin-bottom: 5px;
+
+}
+.ocupado{
+  width: 50px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background: #4bbd60;
+color: #FFF;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-bottom: 5px;
+letter-spacing: 0.038px;
+}
+.main {
+  width: 95%;
+  margin: 0 auto 1%;
+  background: #ffffff;
+  box-shadow: 0px 0px 14px rgba(202, 229, 249, 0.5);
+  border-radius: 22px;
+  .lote_header {
+    margin: 25px 2.5%;
+    .title_lote_header {
+      font-size: 22px;
+      font-weight: 500;
+      color: #01387b;
+    }
+    .green_divider {
+      margin: 0.5rem 0;
+      border: solid 1px #008467;
+    }
+  }
+
+  .td_blue_title {
+    color: #2271bf;
+    font-size: 15px;
+  }
+
+  .title_observado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #2271bf;
+    font-weight: bold;
+    img {
+      padding-left: 0.5rem;
+    }
+  }
+
+  .table-body-row {
+    td {
+      padding: 9px;
+      text-align: center;
+      span {
+        margin-right: 9px;
+      }
+    }
+  }
+  .table-body-head {
+    text-align: center !important;
+    td {
+      .mat-sort-header-container {
+        justify-content: center !important;
+      }
+    }
+  }
+
+  .btn_green {
+    padding: 1.3rem 1rem;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #008467;
+  }
+  .btn_green img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .btn_upload_green {
+    height: 46px;
+    width: 19vw;
+    color: #ffffff;
+    border-radius: 25px;
+    background-color: #008467;
+  }
+  .btn_upload_green img {
+    width: 10%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .btn_white{
+    color: #008467;
+    border: solid 1px #008467;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  .btn_white img {
+    width: 20%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}

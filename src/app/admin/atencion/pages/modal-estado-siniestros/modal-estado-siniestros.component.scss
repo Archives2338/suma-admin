@@ -1,0 +1,68 @@
+.cruz1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.cruz2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.content-dialog {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  h3 {
+    color: #01387b;
+    text-align: center;
+    margin: 1rem 4rem;
+    font-style: italic;
+  }
+  .boton {
+    width: 135px;
+    height: 50px;
+    background: #008467;
+    border-radius: 30.5px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .botones {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+    .boton {
+      width: 135px;
+      height: 50px;
+      background: #008467;
+      border-radius: 30.5px;
+      color: #fff;
+      font-size: 16px;
+      margin: 10px;
+    }
+    .cancel {
+      color: #008467;
+      background: #fff;
+      border: 1px solid #008467;
+    }
+    .btn-blue {
+      color: white;
+      background: #2271bf;
+      border: 1px solid #2271bf;
+    }
+  }
+}
+
+#title-incidencia {
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  color: #01387b;
+  font-weight: bold;
+  font-size: 22px;
+}

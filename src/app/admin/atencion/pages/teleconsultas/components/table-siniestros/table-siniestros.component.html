@@ -1,0 +1,207 @@
+<div class="main">
+
+
+  <div class="main-table">
+
+    <div class="table-head">
+      <div class="paginador">
+        <h4>Mostrar</h4>
+        <select class="select-pag" [(ngModel)]="group">
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="75">75</option>
+          <option value="100">100</option>
+        </select>
+        <p>Registros</p>
+      </div>
+      <!-- (click)="exportToExcel()" -->
+      <div class="space" style="text-align: center">
+        <button
+          mat-raised-button
+          style="margin-right: 19px"
+          (click)="exportToExcel()"
+          color="primary"
+        >
+          <mat-icon color="white">download</mat-icon>
+          Descargar Reporte
+        </button>
+      </div>
+      <div class="space"></div>
+      <div class="buscador">
+        <input
+          type="text"
+          class="buscador-input"
+          placeholder="Buscar"
+          [(ngModel)]="filtro"
+          (ngModelChange)="filtrarSiniestros()"
+        />
+        <!-- <img class="lupa" src="assets/svg/lupa.svg" alt="" /> -->
+      </div>
+      <div class="filtro"></div>
+
+      <!-- <div class="filtro">
+        <button mat-flat-button class="btn_upload_green">
+          Cargar todos los archivos
+          <img
+            src="../../../../../../assets/svg/icon_upload_white.svg"
+            alt=""
+          />
+        </button>
+      </div> -->
+    </div>
+
+    <div class="table-body">
+      <table
+        >
+        <tr class="table-body-head">
+
+          <td >
+            <h4>Id Atención</h4>
+          </td>
+          <td >
+            <h4>Inicio atención</h4>
+          </td>
+          <td >
+            <h4>Proveedor</h4>
+          </td>
+          <td >
+            <h4>Especialidad</h4>
+          </td>
+          <td >
+            <h4>Documento de afiliado</h4>
+          </td>
+          <td >
+            <h4>Afiliado</h4>
+          </td>
+          <td >
+            <h4>Tipo de atención</h4>
+          </td>
+          <td >
+            <h4>Dirección</h4>
+          </td>
+          <td >
+            <h4>Teléfono</h4>
+          </td>
+          <td >
+            <h4>Diagnóstico</h4>
+          </td>
+          <td >
+            <h4>Estado</h4>
+          </td>
+          <td >
+            <h4>PDF atención</h4>
+          </td>
+        </tr>
+        <tr
+          class="table-body-row"
+          *ngFor="
+            let item of siniestros
+              | paginate : { itemsPerPage: group, currentPage: page }
+          "
+        >
+          <td>
+            {{ item.nro_sin_suma}}
+          </td>
+          <td>
+            {{ item.inicio_siniestro}} {{item.hora_ini_siniestro}}
+          </td>
+          <td>
+            {{ item.proveedor}}
+          </td>
+          <td>
+            {{ item.especialidad}}
+          </td>
+          <td>
+            {{ item.tipo_doc}} {{item.nro_doc}}
+          </td>
+          <td>
+            {{ item.apellido_paterno}}  {{item.apellido_materno}} {{item.nombre1}} {{item.nombre2}}
+          </td>
+          <td>
+            {{ item.tipo_atencion}}
+          </td>
+          <td>
+            {{ item.direccion}}
+          </td>
+          <td>
+            {{ item.nro_telefono}}
+          </td>
+          <td>
+            {{ item.diagnostico}}
+          </td>
+          <td>
+            {{ item.estado_siniestro}}
+            <div class="div" *ngIf="item.estado_siniestro == 'Observado'">
+            <button mat-button (click)="openModal(item.estado_siniestro, item.inicio_siniestro, item.motivo)">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+          </div>
+          </td>
+          <td class="body-row-td double-botton">
+            <a [href]="item.url_pdf" target="_blank">
+              <button
+                mat-stroked-button
+                color="primary"
+              >
+                PDF Siniestro
+              </button>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="table-foot">
+      <h4>
+        Del
+        {{ ((page > 1 ? page : 1) - 1) * group + 1 }} al
+        {{
+          ((page > 1 ? page : 1) - 1) * group + group > p.getTotalItems()
+            ? p.getTotalItems()
+            : (((page > 1 ? page : 1) - 1) * group + group | number : "2.0")
+        }}
+        de {{ p.getTotalItems() }} registros
+        {{ filtro != "" ? "(filtrados de " + size + " registros)" : "" }}
+      </h4>
+      <div class="foot-botones">
+        <pagination-template #p="paginationApi" (pageChange)="page = $event">
+          <div class="custom-pagination">
+            <button
+              mat-mini-fab
+              (click)="p.previous()"
+              disabled="{{ p.isFirstPage() }}"
+              class="foot-boton {{ p.isFirstPage() ? 'blanco' : '' }} "
+            >
+              <mat-icon>arrow_back</mat-icon>
+            </button>
+            <div
+              class="page-number"
+              *ngFor="let page of p.pages"
+              [class.current]="p.getCurrent() === page.value"
+            >
+              <span
+                (click)="p.setCurrent(page.value)"
+                *ngIf="p.getCurrent() !== page.value"
+                >{{ page.label }}</span
+              >
+              <div *ngIf="p.getCurrent() === page.value">
+                <span>{{ page.label }}</span>
+              </div>
+            </div>
+            <button
+              mat-mini-fab
+              (click)="p.next()"
+              disabled="{{ p.isLastPage() }}"
+              class="foot-boton {{ p.isLastPage() ? 'blanco' : '' }} "
+            >
+              <mat-icon>arrow_forward</mat-icon>
+            </button>
+          </div>
+        </pagination-template>
+      </div>
+    </div>
+
+  </div>
+</div>

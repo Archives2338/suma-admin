@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { map } from 'rxjs/operators';
 import { environment } from 'src/app/shared/parameters';
+import { Range } from '../../shared/interfaces/range';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +18,11 @@ export class AtencionService {
     'Access-Control-Allow-Origin': '*',
     Authorization : 'Bearer'
 
+  }
+
+  getSiniestrosSuma(data: Range){
+    let url_api = `${this.url}/plataforma/teleconsultas/siniestros-suma`
+    return this.http.post(url_api,data,{headers:this.header}).pipe(map(data => data));
   }
 
 

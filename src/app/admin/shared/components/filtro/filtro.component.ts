@@ -11,7 +11,8 @@ public inicio: Date = new Date();
 public fin: Date = new Date();
 @Output() range = new EventEmitter<any>();
 ngOnInit(): void {
-this.diasAntes.setDate(this.diasAntes.getDate() - 4);
+// this.diasAntes.setDate(this.diasAntes.getDate() - 4);
+this.diasAntes.setDate(this.diasAntes.getDate() - 300);
 
 }
 

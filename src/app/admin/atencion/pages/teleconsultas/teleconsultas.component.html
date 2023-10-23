@@ -1,1 +1,24 @@
+<div class="title">
+  <div class="h1">
+    <h1>
+      <b
+        style="
+        color: #01387B;
+        font-size: 36px;">
+        Historial
+      </b>
+      <b
+        style="
+        color: #45AE58;
+        font-size: 36px;
+        ">
+        de Atenciones
+      </b>
+    </h1>
+  </div>
+</div>
+
 <app-filtro  (range)="searchByRange($event)" > </app-filtro>
+<app-table-siniestros [siniestros]="siniestros" *ngIf="siniestros.length>0"></app-table-siniestros>
+<app-loader ></app-loader>
+<app-not-found-search *ngIf="siniestros.length<=0" ></app-not-found-search>
