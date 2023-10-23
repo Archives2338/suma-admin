@@ -1,3 +1,24 @@
+<div class="title">
+  <div class="h1">
+    <h1>
+      <b
+        style="
+        color: #01387B;
+        font-size: 36px;">
+        Horario
+      </b>
+      <b
+        style="
+        color: #45AE58;
+        font-size: 36px;
+        ">
+        de Teleconsultas
+      </b>
+    </h1>
+  </div>
+</div>
+
+
 <app-filtro  (range)="searchByRange($event)" > </app-filtro>
 <app-table-horarios [sortInfoData]="sortInfoData" *ngIf="sortInfoData.length>0"></app-table-horarios>
 <app-loader ></app-loader>

@@ -18,9 +18,8 @@ export class DrawerMenuComponent {
   // NOMBRE PROVEEDOR
   public nameProvider: string = 'Significad';
   public listItem = [
-    { name: 'Horario de Teleconsulta', active: true },{
-      name : 'Medicos', active : false
-    }
+    { name: 'Horario de Teleconsulta', active: false },
+    // { name : 'Medicos', active : false }
   ]
   constructor(    private router: Router){}
   ngOnInit(): void {
@@ -35,10 +34,6 @@ export class DrawerMenuComponent {
     this.router.navigate(['admin/proveedores/horario-teleconsultas']);
   }
 
-  goMedico(): void{
-    this.router.navigate(['admin/proveedores/medicos']);
-  }
-
  // desactivar todos los items del menu
  desactiveAllItemsMenu() {
   this.listItem.forEach((item) => {
@@ -48,7 +43,11 @@ export class DrawerMenuComponent {
 changeRoute(number:number){
 
   this.desactiveAllItemsMenu() ;
-  this.listItem[number].active = true;
+  // this.listItem[number].active = true;
+  if(this.listItem[number].name == 'Horario de Teleconsulta')
+  {
+    this.goHorariosTeleconsultas()
+  }
 }
 
   @Output() cl = new EventEmitter<string>();
