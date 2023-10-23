@@ -12,8 +12,8 @@ import { Siniestros } from 'src/app/admin/proveedores/interfaces/horarios';
 export class TableSiniestrosComponent implements OnInit {
 
   // input para recibir los siniestros
-  @Input() public siniestros: Array<Siniestros> = [];
-  public siniestros2: any[] = []
+  @Input() public siniestros:any [] = [];
+  @Input() public siniestros2:any [] = [];
 
   public inicio :any ;
   public fin :any ;
@@ -34,10 +34,10 @@ export class TableSiniestrosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.siniestros2 = this.siniestros;
-    console.warn(this.siniestros);
-
-    this.size = this.siniestros2.length;
+      this.siniestros2 = this.siniestros;
+      this.size = this.siniestros2.length;
+      console.warn(this.siniestros);
+      console.warn(this.siniestros2);
   }
 
   exportToExcel(): void {
@@ -124,10 +124,12 @@ export class TableSiniestrosComponent implements OnInit {
 
 
   filtrarSiniestros() {
-    console.warn("hola filtro");
 
     this.page = 1;
     this.siniestros = this.siniestros2;
+    console.log(this.siniestros);
+    console.log(this.siniestros2);
+
     this.siniestros = this.siniestros.filter((eme) => {
       if (eme) {
         return (
@@ -147,6 +149,5 @@ export class TableSiniestrosComponent implements OnInit {
       return false;
     });
   }
-
 
 }

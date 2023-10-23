@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AtencionService } from '../../services/atencion.service';
 import { Range } from 'src/app/admin/shared/interfaces/range';
+import { Siniestros } from 'src/app/admin/proveedores/interfaces/horarios';
 
 @Component({
   selector: 'app-teleconsultas',
@@ -9,7 +10,8 @@ import { Range } from 'src/app/admin/shared/interfaces/range';
 })
 export class TeleconsultasComponent {
 
-  public siniestros: any[] = [];
+  public siniestros: Array<Siniestros> | any = [];
+  public siniestros2: Array<Siniestros> | any = [];
   constructor(private services:AtencionService) { }
 
  searchByRange(event: Range): void {
@@ -24,8 +26,9 @@ export class TeleconsultasComponent {
       if(data.length > 0){
         // console.log(data);
         this.siniestros = data;
+        this.siniestros2 = this.siniestros
         console.log(this.siniestros);
-
+        console.log(this.siniestros2);
       }
 
     } else {
