@@ -108,7 +108,7 @@ export class TableSiniestrosComponent implements OnInit {
       // width: '402px',
       // height: '255px',
       width: '442px',
-      height: '350px',
+      height: '380px',
       panelClass: 'dialog-actions',
       data: {
         estado_siniestro: estado_siniestro,

@@ -107,28 +107,28 @@
             {{ item.inicio_siniestro}} {{item.hora_ini_siniestro}}
           </td>
           <td>
-            {{ item.proveedor}}
+            {{ item.proveedor | titlecase}}
           </td>
           <td>
-            {{ item.especialidad}}
+            {{ item.especialidad | titlecase}}
           </td>
           <td>
             {{ item.tipo_doc}} {{item.nro_doc}}
           </td>
           <td>
-            {{ item.apellido_paterno}}  {{item.apellido_materno}} {{item.nombre1}} {{item.nombre2}}
+            {{ item.apellido_paterno | titlecase}}  {{item.apellido_materno | titlecase}} {{item.nombre1 | titlecase}} {{item.nombre2 | titlecase}}
           </td>
           <td>
             {{ item.tipo_atencion}}
           </td>
           <td>
-            {{ item.direccion}}
+            {{ item.direccion | titlecase}}
           </td>
           <td>
             {{ item.nro_telefono}}
           </td>
           <td>
-            {{ item.diagnostico}}
+            {{ item.diagnostico | titlecase}}
           </td>
           <td>
             {{ item.estado_siniestro}}
@@ -138,13 +138,22 @@
             </button>
           </div>
           </td>
-          <td class="body-row-td double-botton">
+          <!-- <td class="body-row-td double-botton">
             <a [href]="item.url_pdf" target="_blank">
               <button
                 mat-stroked-button
                 color="primary"
               >
                 PDF Siniestro
+              </button>
+            </a>
+          </td> -->
+          <td class="body-row-td double-botton">
+            <a [href]="item.url_pdf" target="_blank">
+              <button
+                mat-stroked-button
+              >
+              <img src="assets/svg/group-button.svg" alt="" />
               </button>
             </a>
           </td>

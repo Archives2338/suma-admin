@@ -1,13 +1,12 @@
 <div class="content-dialog">
-  <!-- <img src="assets/svg/fondo-cruz-1.svg" class="cruz1" alt="" />
-  <img src="assets/svg/fondo-cruz-2.svg" class="cruz2" alt="" /> -->
-  <div class="content-dialog">
+  <br><br><br>
+  <img src="assets/svg/fondo-cruz-1.svg" class="cruz1" alt="" />
+  <img src="assets/svg/fondo-cruz-2.svg" class="cruz2" alt="" />
     <img src="assets/svg/pop-observado.svg" alt="" />
-    <h3>Atención {{data.estado_siniestro}}</h3>
+    <h3><b>Atención {{data.estado_siniestro}}</b></h3>
     <div class="text">
-      <h3><b>Fecha:&nbsp;</b>{{data.inicio_siniestro}}</h3>
-      <h3><b>Motivo:&nbsp;</b>{{data.motivo}}</h3>
+      <h3><b>Fecha:&nbsp;</b><i style="color: #6A7183;">{{data.inicio_siniestro}}</i></h3>
+      <h3><b>Motivo:&nbsp;</b><i style="color: #6A7183;">{{data.motivo}}</i></h3>
+      <button mat-flat-button class="boton" (click)="close()">Aceptar</button>
     </div>
-    <button mat-flat-button class="boton" (click)="close()">Aceptar</button>
-</div>
 </div>

@@ -16,12 +16,26 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-radius: 50px;
+
   h3 {
     color: #01387b;
-    text-align: center;
+    text-align: left;
     margin: 1rem 4rem;
     font-style: italic;
   }
+
+  .text {
+    margin-bottom: 80px;
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido verticalmente */
+    h3 {
+      color: #01387b;
+    }
+  }
+
   .boton {
     width: 135px;
     height: 50px;
@@ -29,32 +43,9 @@
     border-radius: 30.5px;
     color: #fff;
     font-size: 16px;
-  }
-
-  .botones {
+    align-items: center;
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-top: 1rem;
-    .boton {
-      width: 135px;
-      height: 50px;
-      background: #008467;
-      border-radius: 30.5px;
-      color: #fff;
-      font-size: 16px;
-      margin: 10px;
-    }
-    .cancel {
-      color: #008467;
-      background: #fff;
-      border: 1px solid #008467;
-    }
-    .btn-blue {
-      color: white;
-      background: #2271bf;
-      border: 1px solid #2271bf;
-    }
   }
 }
 
