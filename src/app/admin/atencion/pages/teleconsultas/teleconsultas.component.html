@@ -19,6 +19,6 @@
 </div>
 
 <app-filtro  (range)="searchByRange($event)" > </app-filtro>
-<app-table-siniestros [siniestros]="siniestros" *ngIf="siniestros.length>0"></app-table-siniestros>
+<app-table-siniestros [siniestros]="siniestros" [siniestros2]="siniestros2" *ngIf="siniestros.length>0"></app-table-siniestros>
 <app-loader ></app-loader>
 <app-not-found-search *ngIf="siniestros.length<=0" ></app-not-found-search>

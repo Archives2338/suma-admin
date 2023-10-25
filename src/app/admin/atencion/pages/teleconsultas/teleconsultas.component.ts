@@ -10,8 +10,8 @@ import { Siniestros } from 'src/app/admin/proveedores/interfaces/horarios';
 })
 export class TeleconsultasComponent {
 
-  public siniestros: Array<Siniestros> | any = [];
-  public siniestros2: Array<Siniestros> | any = [];
+  public siniestros: Array<Siniestros> = [];
+  public siniestros2: Array<Siniestros> = [];
   constructor(private services:AtencionService) { }
 
  searchByRange(event: Range): void {
