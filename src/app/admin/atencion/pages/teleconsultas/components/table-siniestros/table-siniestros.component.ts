@@ -12,8 +12,8 @@ import { Siniestros } from 'src/app/admin/proveedores/interfaces/horarios';
 export class TableSiniestrosComponent implements OnInit {
 
   // input para recibir los siniestros
-  @Input() public siniestros:any [] = [];
-  @Input() public siniestros2:any [] = [];
+  @Input() public siniestros:Array<Siniestros> = [];
+  @Input() public siniestros2:Array<Siniestros> = [];
 
   public inicio :any ;
   public fin :any ;
