@@ -36,8 +36,8 @@ export class TableSiniestrosComponent implements OnInit {
   ngOnInit(): void {
       this.siniestros2 = this.siniestros;
       this.size = this.siniestros2.length;
-      console.warn(this.siniestros);
-      console.warn(this.siniestros2);
+      // console.warn(this.siniestros);
+      // console.warn(this.siniestros2);
   }
 
   exportToExcel(): void {
@@ -127,8 +127,8 @@ export class TableSiniestrosComponent implements OnInit {
 
     this.page = 1;
     this.siniestros = this.siniestros2;
-    console.log(this.siniestros);
-    console.log(this.siniestros2);
+    // console.log(this.siniestros);
+    // console.log(this.siniestros2);
 
     this.siniestros = this.siniestros.filter((eme) => {
       if (eme) {
