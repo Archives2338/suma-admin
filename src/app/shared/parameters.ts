@@ -19,7 +19,7 @@ const enviroments = {
 
 
 
-export const environment = enviroments.local_suma;
+export const environment = enviroments.prod;
 
 
 
